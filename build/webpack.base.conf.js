@@ -22,7 +22,6 @@ const baseConfig = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     alias: {
       '@': resolve('src'),
-      '@enforcer-squad/uss': resolve('src/uss/export.ts'),
     },
   },
   module: {

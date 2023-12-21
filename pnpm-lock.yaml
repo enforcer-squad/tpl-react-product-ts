@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@enforcer-squad/uss':
-    specifier: ^1.0.6
-    version: 1.0.6(react-dom@18.2.0)(react-router-dom@6.21.0)(react@18.2.0)
+    specifier: ^1.0.8
+    version: 1.0.8(react-dom@18.2.0)(react-router-dom@6.21.0)(react@18.2.0)
   antd:
     specifier: ^4.24.15
     version: 4.24.15(react-dom@18.2.0)(react@18.2.0)
@@ -2304,8 +2304,8 @@ packages:
     engines: {node: '>=10.0.0'}
     dev: true
 
-  /@enforcer-squad/uss@1.0.6(react-dom@18.2.0)(react-router-dom@6.21.0)(react@18.2.0):
-    resolution: {integrity: sha512-rhoVDcnDyfFrqcER4rzOh4lj/3zF9dwqu8lywRdaW78C8eoSbPrfGtZbJV90cOKGzo3iN5mBPOScjNwu06yXlg==}
+  /@enforcer-squad/uss@1.0.8(react-dom@18.2.0)(react-router-dom@6.21.0)(react@18.2.0):
+    resolution: {integrity: sha512-SjNZADE2Ty0IVRViNlhEkVbbcKgeL0ADV64+jzjwe+h5uT4CpHkx4l25Y+ICJ/OX9Ny8E14Y6S8PJyR0xJb7sQ==}
     requiresBuild: true
     peerDependencies:
       react: ^18.2.0
@@ -5701,6 +5701,7 @@ packages:
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       safer-buffer: 2.1.2
     dev: true
@@ -6992,6 +6993,7 @@ packages:
   /pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -7780,6 +7782,7 @@ packages:
 
   /prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -8713,6 +8716,7 @@ packages:
 
   /sax@1.3.0:
     resolution: {integrity: sha512-0s+oAmw9zLl1V1cS9BtZN7JAd0cW5e0QH4W3LWEK6a4LaLEA2OTpGYWDY+6XasBLtz6wkm3u1xRw95mRuJ59WA==}
+    requiresBuild: true
     dev: true
     optional: true
 

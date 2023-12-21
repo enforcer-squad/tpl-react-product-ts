@@ -25,7 +25,7 @@ const model = uss<Store>({
   todos: [],
   filter: 'all',
   addTodo(todo) {
-    this.todos.push({
+    model.todos.push({
       ...todo,
       id: defaultId++,
     });
@@ -44,6 +44,7 @@ const model = uss<Store>({
   },
 });
 devtools(model);
+
 export const filters: Filter[] = ['all', 'completed'];
 
 export default model;

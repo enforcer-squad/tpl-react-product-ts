@@ -7,7 +7,7 @@ import style from './index.less';
 
 const Index = () => {
   const [count, setCount] = useState(0);
-  const { refetch } = useLogout();
+  const { mutate } = useLogout();
   return (
     <div className={style.test}>
       <FilterRow />
@@ -18,7 +18,7 @@ const Index = () => {
         <button onClick={() => setCount(c => c + 1)}>add</button>
       </div>
       <div>
-        <button onClick={() => refetch()}>logout</button>
+        <button onClick={() => mutate(1)}>logout</button>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ export const USER_CACHE_KEY = ['user'];
 
 const useLogin = () => {
   return useMutation(login, {
-    onSuccess: (data: any) => {
+    onSuccess: (params, data: any) => {
       setData(USER_CACHE_KEY, data);
     },
   });
@@ -14,8 +14,7 @@ const useLogin = () => {
 const useCheckLogin = () => useQuery(USER_CACHE_KEY, checkLogin, { params: [] });
 
 const useLogout = () => {
-  return useQuery(USER_CACHE_KEY, logout, {
-    manual: true,
+  return useMutation(logout, {
     onSuccess: () => {
       setData(USER_CACHE_KEY, undefined);
     },
