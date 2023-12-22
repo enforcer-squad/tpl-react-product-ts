@@ -15,6 +15,7 @@ const Routes: FC<PropTypes> = ({ auth = {} }) => {
 
 const Router = () => {
   const { data } = useCheckLogin();
+  console.log(data?.data?.role);
 
   return (
     <BrowserRouter>

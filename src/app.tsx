@@ -15,16 +15,19 @@ const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => (
   </div>
 );
 
-const App = () => (
-  <ErrorBoundary
-    FallbackComponent={ErrorFallback}
-    onReset={() => {
-      console.log('重试');
-    }}>
-    <Suspense fallback={<div>loading....</div>}>
-      <Router />
-    </Suspense>
-  </ErrorBoundary>
-);
+const App = () => {
+  return (
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => {
+        console.log('重试');
+      }}
+    >
+      <Suspense fallback={<div>loading....</div>}>
+        <Router />
+      </Suspense>
+    </ErrorBoundary>
+  );
+};
 
 export default App;

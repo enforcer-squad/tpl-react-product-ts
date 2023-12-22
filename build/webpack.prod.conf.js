@@ -2,8 +2,10 @@ const chalk = require('chalk');
 const { merge } = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { config } = require('./config');
 const { getCssLoaders, subDir } = require('./utils');
 const baseConfig = require('./webpack.base.conf');
 
