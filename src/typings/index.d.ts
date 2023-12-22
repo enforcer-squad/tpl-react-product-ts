@@ -5,6 +5,10 @@ declare namespace NodeJS {
   }
 }
 
+interface Window {
+  tx_language: Record<string, string>;
+}
+
 // declare module '*.less' {
 //   const classes: { [key: string]: string };
 //   export default classes;

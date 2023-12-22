@@ -1,4 +1,4 @@
-import client from '@/utils/client';
+import { client } from '@/utils';
 import type { LoginParams, User } from '@/services/types/user';
 
 const login = (params: LoginParams): Promise<User> =>
