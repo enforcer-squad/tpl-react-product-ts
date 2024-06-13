@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom';
-// import { useCheckLogin } from '@/services/user.ts';
 import routes from './config';
-import { useModel, useWatch } from '@enforcer-squad/rex';
+import { useModel } from '@enforcer-squad/rex';
 import userModel from '@/store/user';
+import { useSuspense } from '@/utils';
 
 interface PropTypes {
   role: number | undefined;
@@ -17,9 +17,7 @@ const Routes: FC<PropTypes> = ({ role }) => {
 const Router = () => {
   const { role, check } = useModel(userModel);
 
-  useWatch(() => {
-    check();
-  }, []);
+  useSuspense(check, { cacheKeys: ['check'] });
 
   return (
     <BrowserRouter>
