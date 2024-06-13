@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { Checkbox } from 'antd';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import appModel, { type Todo } from '@/store/app';
-import { useUSS } from '@enforcer-squad/uss';
+import { useModel } from '@enforcer-squad/rex';
 
 interface PropTypes {
   todo: Todo;
@@ -12,7 +12,7 @@ interface PropTypes {
 const TodoItem: FC<PropTypes> = ({ todo }) => {
   console.log('TodoItem render', todo);
 
-  const { updateTodo, removeTodo } = useUSS(appModel);
+  const { updateTodo, removeTodo } = useModel(appModel);
 
   const changeHandler = (e: CheckboxChangeEvent) => {
     updateTodo(todo.id, e.target.checked);

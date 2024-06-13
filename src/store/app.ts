@@ -1,4 +1,4 @@
-import { uss, devtools } from '@enforcer-squad/uss';
+import { createModel, devtools } from '@enforcer-squad/rex';
 
 export interface Todo {
   id: number;
@@ -9,7 +9,7 @@ export interface Todo {
 type Filter = 'all' | 'completed';
 
 interface Store {
-  key: string;
+  user: any;
   todos: Todo[];
   filter: Filter;
   addTodo: (todo: Omit<Todo, 'id'>) => void;
@@ -20,8 +20,8 @@ interface Store {
 
 let defaultId = 1;
 
-const model = uss<Store>({
-  key: 'app',
+const model = createModel<Store>({
+  user: {},
   todos: [],
   filter: 'all',
   addTodo(todo) {
@@ -43,7 +43,8 @@ const model = uss<Store>({
     model.filter = filter;
   },
 });
-devtools(model);
+
+devtools(model, { name: 'app' });
 
 export const filters: Filter[] = ['all', 'completed'];
 

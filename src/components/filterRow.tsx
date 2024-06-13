@@ -2,11 +2,11 @@ import { memo } from 'react';
 import { Radio } from 'antd';
 import type { RadioChangeEvent } from 'antd/es/radio';
 import appModel, { filters } from '@/store/app';
-import { useUSS } from '@enforcer-squad/uss';
+import { useModel } from '@enforcer-squad/rex';
 
 const FilterRow = () => {
   console.log('FilterRow render');
-  const { filter, toggleFilter } = useUSS(appModel);
+  const { filter, toggleFilter } = useModel(appModel);
 
   const changeHandler = (e: RadioChangeEvent) => {
     const ret = e.target.value;

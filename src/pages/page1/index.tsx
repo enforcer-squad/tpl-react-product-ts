@@ -1,14 +1,16 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState } from 'react';
 import FilterRow from '@/components/filterRow';
 import AddTodo from '@/components/addTodo';
 import TodoList from '@/components/todoList';
-import { useLogout } from '@/services/userService';
 import { intl } from '@/utils/index';
+import { useModel } from '@enforcer-squad/rex';
+import userModel from '@/store/user';
 import style from './index.less';
 
 const Index = () => {
   const [count, setCount] = useState(0);
-  const { mutate } = useLogout();
+  const { doLogout } = useModel(userModel);
   return (
     <div className={style.test}>
       <FilterRow />
@@ -19,7 +21,7 @@ const Index = () => {
         <button onClick={() => setCount(c => c + 1)}>{intl('增加')}</button>
       </div>
       <div>
-        <button onClick={() => mutate(1)}>{intl('退出')}</button>
+        <button onClick={() => doLogout()}>{intl('退出')}</button>
       </div>
     </div>
   );
