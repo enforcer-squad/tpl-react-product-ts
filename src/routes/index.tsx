@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { useRoutes, BrowserRouter } from 'react-router-dom';
 // import { useCheckLogin } from '@/services/user.ts';
 import routes from './config';
-import { useModel } from '@enforcer-squad/rex';
+import { useModel, useWatch } from '@enforcer-squad/rex';
 import userModel from '@/store/user';
 
 interface PropTypes {
@@ -15,8 +15,11 @@ const Routes: FC<PropTypes> = ({ role }) => {
 };
 
 const Router = () => {
-  const { role } = useModel(userModel);
-  console.log('useEffect', role);
+  const { role, check } = useModel(userModel);
+
+  useWatch(() => {
+    check();
+  }, []);
 
   return (
     <BrowserRouter>
